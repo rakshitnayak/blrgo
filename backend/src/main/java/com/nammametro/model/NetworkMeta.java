@@ -5,4 +5,5 @@ public record NetworkMeta(
         String generatedAt,
         String dataVersion,
         int stationCount,
-        String disclaimer) {}
+        String disclaimer,
+        String platformData) {}

@@ -12,6 +12,10 @@ The first vertical slice includes:
 - interchange-aware routing using Dijkstra's algorithm;
 - searchable station pickers and station-by-station guidance;
 - an interactive MapLibre/OpenStreetMap layer with route highlighting;
+- switchable network/journey map views, station labels, interchange markers,
+  and GTFS-derived platform guidance;
+- browser-local nearest-station lookup with a user-location marker and
+  straight-line distance calculation;
 - all 88 physical stations across the Purple, Green, Yellow, and currently
   operational Pink Line section.
 
@@ -66,8 +70,18 @@ GET /api/routes?from=whitefield&to=silk-institute
 - Basemap: OpenStreetMap, © OpenStreetMap contributors
 - Purple, Green, and Yellow network: the ODbL-licensed community BMRCL GTFS
   feed by Vonter, derived from BMRCL timetables and OpenStreetMap
+- Platform numbers and directions: platform-level stops and stop headsigns in
+  that community GTFS feed; always confirm against live station displays
 - Pink Line operational section: station order and opening status verified on
   14 November 2026; coordinates are attributed to OpenStreetMap contributors
+
+To refresh platform metadata from a downloaded `bmrcl.zip` feed:
+
+```sh
+python3 backend/scripts/import_platforms.py \
+  --gtfs /path/to/bmrcl.zip \
+  --network backend/src/main/resources/data/network.json
+```
 
 The public OpenStreetMap raster endpoint is appropriate for local development
 and low-volume evaluation subject to its tile usage policy. Configure a

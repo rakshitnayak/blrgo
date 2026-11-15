@@ -1,5 +1,17 @@
 export type LineId = "purple" | "green" | "yellow" | "pink";
 
+export type PlatformInfo = {
+  code: string;
+  line: LineId;
+  towards: string[];
+};
+
+export type UserLocation = {
+  latitude: number;
+  longitude: number;
+  accuracy: number;
+};
+
 export type Station = {
   id: string;
   name: string;
@@ -8,6 +20,7 @@ export type Station = {
   longitude: number;
   accessible: boolean;
   status: string;
+  platforms: PlatformInfo[];
 };
 
 export type MetroLine = {
@@ -28,6 +41,7 @@ export type Network = {
     dataVersion: string;
     stationCount: number;
     disclaimer: string;
+    platformData: string;
   };
   lines: MetroLine[];
   stations: Station[];
@@ -39,6 +53,7 @@ export type RouteSegment = {
   lineName: string;
   color: string;
   direction: string;
+  platformCode: string | null;
   from: Station;
   to: Station;
   stops: Station[];

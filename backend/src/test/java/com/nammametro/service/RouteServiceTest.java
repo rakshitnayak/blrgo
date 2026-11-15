@@ -22,6 +22,7 @@ class RouteServiceTest {
                 .endsWith("VJRH", "TGTP", "APTS");
         assertThat(route.interchangeCount()).isEqualTo(1);
         assertThat(route.segments()).extracting("line").containsExactly("purple", "green");
+        assertThat(route.segments()).extracting("platformCode").containsExactly("2", "4");
         assertThat(route.stopCount()).isEqualTo(route.stops().size() - 1);
     }
 
@@ -30,6 +31,7 @@ class RouteServiceTest {
         var route = service.findRoute("PNKA", "BMSD");
 
         assertThat(route.segments()).extracting("line").containsExactly("pink", "yellow");
+        assertThat(route.segments()).extracting("platformCode").containsExactly(null, "2");
         assertThat(route.stops()).extracting("id").contains("PNKJ", "JDHP", "ETCT");
     }
 }

@@ -4,7 +4,8 @@
     "generatedAt": "2026-11-14",
     "dataVersion": "GTFS 2026-08-17 + Pink Line opening 2026-11-14",
     "stationCount": 88,
-    "disclaimer": "Unofficial journey-planning data. Confirm fares and service changes with BMRCL."
+    "disclaimer": "Unofficial journey-planning data. Confirm fares and service changes with BMRCL.",
+    "platformData": "Community GTFS platform assignments; always follow live station displays."
   },
   "lines": [
     {
@@ -3633,7 +3634,25 @@
       "latitude": 12.961893,
       "longitude": 77.53358,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "BYPH",
@@ -3644,7 +3663,28 @@
       "latitude": 12.990759,
       "longitude": 77.65236,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "BSNK",
@@ -3655,7 +3695,25 @@
       "latitude": 12.915221,
       "longitude": 77.5736,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "JTPM",
@@ -3666,7 +3724,26 @@
       "latitude": 12.996516,
       "longitude": 77.668465,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "HOSR",
@@ -3677,7 +3754,23 @@
       "latitude": 12.863867,
       "longitude": 77.65786,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "PNKI",
@@ -3688,7 +3781,8 @@
         "pink"
       ],
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": []
     },
     {
       "id": "HBGI",
@@ -3699,7 +3793,23 @@
       "latitude": 12.829033,
       "longitude": 77.68137,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "HSRL",
@@ -3710,7 +3820,23 @@
       "latitude": 12.910616,
       "longitude": 77.62648,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "BTML",
@@ -3721,7 +3847,23 @@
       "latitude": 12.916588,
       "longitude": 77.608116,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "SBJT",
@@ -3732,7 +3874,23 @@
       "latitude": 12.916582,
       "longitude": 77.62057,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "CLGA",
@@ -3743,7 +3901,23 @@
       "latitude": 12.897354,
       "longitude": 77.46129,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "CKPE",
@@ -3754,7 +3928,25 @@
       "latitude": 12.966897,
       "longitude": 77.574554,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "JIDL",
@@ -3765,7 +3957,23 @@
       "latitude": 13.052362,
       "longitude": 77.487915,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "CBPK",
@@ -3776,7 +3984,29 @@
       "latitude": 12.980958,
       "longitude": 77.59757,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Mahatma Gandhi Road",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "DSH",
@@ -3787,7 +4017,23 @@
       "latitude": 13.043261,
       "longitude": 77.51255,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "DJNR",
@@ -3798,7 +4044,25 @@
       "latitude": 12.952058,
       "longitude": 77.53701,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "BMSD",
@@ -3809,7 +4073,23 @@
       "latitude": 12.819394,
       "longitude": 77.68835,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "KLPK",
@@ -3820,7 +4100,23 @@
       "latitude": 12.884643,
       "longitude": 77.55276,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "VDSA",
@@ -3831,7 +4127,29 @@
       "latitude": 12.978742,
       "longitude": 77.59164,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Mahatma Gandhi Road",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "ETCT",
@@ -3842,7 +4160,23 @@
       "latitude": 12.856505,
       "longitude": 77.66352,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "GDCP",
@@ -3853,7 +4187,26 @@
       "latitude": 12.99345,
       "longitude": 77.703674,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "YPI",
@@ -3864,7 +4217,25 @@
       "latitude": 13.028332,
       "longitude": 77.54085,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "HLRU",
@@ -3875,7 +4246,28 @@
       "latitude": 12.976499,
       "longitude": 77.626686,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "OFDC",
@@ -3886,7 +4278,23 @@
       "latitude": 12.901695,
       "longitude": 77.63199,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "DKIA",
@@ -3897,7 +4305,25 @@
       "latitude": 12.988803,
       "longitude": 77.71133,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "UWVL",
@@ -3908,7 +4334,23 @@
       "latitude": 12.987343,
       "longitude": 77.7538,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "BSRD",
@@ -3919,7 +4361,23 @@
       "latitude": 12.870749,
       "longitude": 77.65245,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "PNKH",
@@ -3930,7 +4388,8 @@
         "pink"
       ],
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": []
     },
     {
       "id": "HSKR",
@@ -3941,7 +4400,23 @@
       "latitude": 12.839157,
       "longitude": 77.677376,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "IDN",
@@ -3952,7 +4427,28 @@
       "latitude": 12.978333,
       "longitude": 77.638664,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "ECTN",
@@ -3963,7 +4459,23 @@
       "latitude": 12.846413,
       "longitude": 77.671165,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "JLHL",
@@ -3974,7 +4486,23 @@
       "latitude": 13.03941,
       "longitude": 77.51974,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "JPN",
@@ -3985,7 +4513,25 @@
       "latitude": 12.907475,
       "longitude": 77.57313,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "JDHP",
@@ -3997,7 +4543,23 @@
       "latitude": 12.916731,
       "longitude": 77.59997,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "JYN",
@@ -4008,7 +4570,25 @@
       "latitude": 12.929507,
       "longitude": 77.58015,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "BGUC",
@@ -4019,7 +4599,23 @@
       "latitude": 12.935436,
       "longitude": 77.512405,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "KDGD",
@@ -4030,7 +4626,23 @@
       "latitude": 12.98565,
       "longitude": 77.74701,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "PNKA",
@@ -4041,7 +4653,8 @@
         "pink"
       ],
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": []
     },
     {
       "id": "KGIT",
@@ -4052,7 +4665,23 @@
       "latitude": 12.90791,
       "longitude": 77.47658,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "MLSD",
@@ -4063,7 +4692,23 @@
       "latitude": 12.914689,
       "longitude": 77.487854,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "APRC",
@@ -4074,7 +4719,23 @@
       "latitude": 12.888967,
       "longitude": 77.56267,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "BRCS",
@@ -4085,7 +4746,25 @@
       "latitude": 12.975877,
       "longitude": 77.56538,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "KRMT",
@@ -4096,7 +4775,25 @@
       "latitude": 12.960879,
       "longitude": 77.57466,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "KRAM",
@@ -4107,7 +4804,26 @@
       "latitude": 12.999902,
       "longitude": 77.67767,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "MSRN",
@@ -4118,7 +4834,23 @@
       "latitude": 12.889926,
       "longitude": 77.63921,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "KDNH",
@@ -4129,7 +4861,25 @@
       "latitude": 12.977594,
       "longitude": 77.71556,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "LBGH",
@@ -4140,7 +4890,25 @@
       "latitude": 12.946526,
       "longitude": 77.58002,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "BIET",
@@ -4151,7 +4919,23 @@
       "latitude": 13.057421,
       "longitude": 77.47281,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "MIRD",
@@ -4162,7 +4946,25 @@
       "latitude": 12.975632,
       "longitude": 77.55535,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "KVPR",
@@ -4173,7 +4975,25 @@
       "latitude": 12.99853,
       "longitude": 77.5569,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "MHLI",
@@ -4184,7 +5004,25 @@
       "latitude": 13.008047,
       "longitude": 77.548805,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "MAGR",
@@ -4195,7 +5033,29 @@
       "latitude": 12.975526,
       "longitude": 77.60679,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Mahatma Gandhi Road",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "MNJN",
@@ -4206,7 +5066,23 @@
       "latitude": 13.05009,
       "longitude": 77.494446,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "SPGD",
@@ -4217,7 +5093,25 @@
       "latitude": 12.990463,
       "longitude": 77.57073,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "MYRD",
@@ -4228,7 +5122,25 @@
       "latitude": 12.946718,
       "longitude": 77.53016,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "PNKJ",
@@ -4239,7 +5151,8 @@
         "pink"
       ],
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": []
     },
     {
       "id": "KGWA",
@@ -4251,7 +5164,45 @@
       "latitude": 12.975708,
       "longitude": 77.572876,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "3",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "4",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        },
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Mahatma Gandhi Road",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "NGSA",
@@ -4262,7 +5213,23 @@
       "latitude": 13.047954,
       "longitude": 77.500145,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "VDHP",
@@ -4273,7 +5240,25 @@
       "latitude": 12.976641,
       "longitude": 77.724884,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "NLC",
@@ -4284,7 +5269,25 @@
       "latitude": 12.950527,
       "longitude": 77.57369,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "NYHM",
@@ -4295,7 +5298,23 @@
       "latitude": 12.941671,
       "longitude": 77.525116,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "PATG",
@@ -4306,7 +5325,23 @@
       "latitude": 12.92425,
       "longitude": 77.49835,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "ITPL",
@@ -4317,7 +5352,25 @@
       "latitude": 12.987639,
       "longitude": 77.73777,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "PEYA",
@@ -4328,7 +5381,25 @@
       "latitude": 13.033019,
       "longitude": 77.5332,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "PYID",
@@ -4339,7 +5410,25 @@
       "latitude": 13.036318,
       "longitude": 77.52549,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "RGDT",
@@ -4350,7 +5439,23 @@
       "latitude": 12.917081,
       "longitude": 77.5883,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "RJNR",
@@ -4361,7 +5466,25 @@
       "latitude": 13.000525,
       "longitude": 77.54966,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "RRRN",
@@ -4372,7 +5495,23 @@
       "latitude": 12.9366,
       "longitude": 77.51968,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "RVR",
@@ -4384,7 +5523,39 @@
       "latitude": 12.921581,
       "longitude": 77.5802,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        },
+        {
+          "code": "3",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        },
+        {
+          "code": "4",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        }
+      ]
     },
     {
       "id": "PNKS",
@@ -4395,7 +5566,8 @@
         "pink"
       ],
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": []
     },
     {
       "id": "SSFY",
@@ -4406,7 +5578,25 @@
       "latitude": 13.014654,
       "longitude": 77.553986,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "VWIA",
@@ -4417,7 +5607,25 @@
       "latitude": 12.980856,
       "longitude": 77.708786,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "APTS",
@@ -4428,7 +5636,23 @@
       "latitude": 12.86173,
       "longitude": 77.52995,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "CKBR",
@@ -4439,7 +5663,23 @@
       "latitude": 12.880818,
       "longitude": 77.644844,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "yellow",
+          "towards": [
+            "Rashtreeya Vidyalaya Road"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "yellow",
+          "towards": [
+            "Delta Electronics Bommasandra"
+          ]
+        }
+      ]
     },
     {
       "id": "MDVP",
@@ -4450,7 +5690,26 @@
       "latitude": 12.996545,
       "longitude": 77.69272,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "VSWA",
@@ -4461,7 +5720,29 @@
       "latitude": 12.97452,
       "longitude": 77.58422,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Mahatma Gandhi Road",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "SECE",
@@ -4472,7 +5753,25 @@
       "latitude": 12.938257,
       "longitude": 77.580055,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "HSLI",
@@ -4483,7 +5782,25 @@
       "latitude": 12.974293,
       "longitude": 77.54562,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "SSHP",
@@ -4494,7 +5811,25 @@
       "latitude": 12.981195,
       "longitude": 77.72754,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "SPRU",
@@ -4505,7 +5840,25 @@
       "latitude": 12.996525,
       "longitude": 77.563194,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "SVRD",
@@ -4516,7 +5869,28 @@
       "latitude": 12.985931,
       "longitude": 77.6449,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "TGTP",
@@ -4527,7 +5901,23 @@
       "latitude": 12.87141,
       "longitude": 77.5384,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "TTY",
@@ -4538,7 +5928,28 @@
       "latitude": 12.973022,
       "longitude": 77.61702,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Baiyappanahalli",
+            "Garudacharpalya",
+            "Pattandur Agrahara",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road",
+            "Nadaprabhu Kempegowda Station, Majestic"
+          ]
+        }
+      ]
     },
     {
       "id": "VJRH",
@@ -4549,7 +5960,23 @@
       "latitude": 12.877437,
       "longitude": 77.54474,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute"
+          ]
+        }
+      ]
     },
     {
       "id": "VJN",
@@ -4560,7 +5987,25 @@
       "latitude": 12.970956,
       "longitude": 77.53741,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Garudacharpalya",
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta",
+            "Mysore Road"
+          ]
+        }
+      ]
     },
     {
       "id": "WHTM",
@@ -4571,7 +6016,23 @@
       "latitude": 12.995743,
       "longitude": 77.75795,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "purple",
+          "towards": [
+            "Whitefield (Kadugodi)"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "purple",
+          "towards": [
+            "Challaghatta"
+          ]
+        }
+      ]
     },
     {
       "id": "PUTH",
@@ -4582,7 +6043,25 @@
       "latitude": 12.89605,
       "longitude": 77.57012,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     },
     {
       "id": "YPM",
@@ -4593,7 +6072,25 @@
       "latitude": 13.023268,
       "longitude": 77.54987,
       "accessible": true,
-      "status": "operational"
+      "status": "operational",
+      "platforms": [
+        {
+          "code": "1",
+          "line": "green",
+          "towards": [
+            "Madavara",
+            "Peenya Industry"
+          ]
+        },
+        {
+          "code": "2",
+          "line": "green",
+          "towards": [
+            "Silk Institute",
+            "Yelachenahalli"
+          ]
+        }
+      ]
     }
   ],
   "connections": [

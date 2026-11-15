@@ -2,6 +2,7 @@ package com.nammametro.service;
 
 import com.nammametro.model.Connection;
 import com.nammametro.model.MetroLine;
+import com.nammametro.model.PlatformInfo;
 import com.nammametro.model.RouteResponse;
 import com.nammametro.model.RouteSegment;
 import com.nammametro.model.Station;
@@ -134,8 +135,9 @@ public class RouteService {
             MetroLine line = lines.get(lineId);
             Station first = segmentStops.getFirst();
             Station last = segmentStops.getLast();
+            String direction = directionFor(line, first.id(), last.id(), stations);
             segments.add(new RouteSegment(
-                    lineId, line.name(), line.color(), directionFor(line, first.id(), last.id(), stations),
+                    lineId, line.name(), line.color(), direction, platformFor(first, lineId, direction),
                     first, last, segmentStops, minutes));
             index = end;
         }
@@ -147,6 +149,16 @@ public class RouteService {
         int toIndex = line.stationIds().indexOf(to);
         String terminalId = toIndex >= fromIndex ? line.stationIds().getLast() : line.stationIds().getFirst();
         return stations.get(terminalId).name();
+    }
+
+    private String platformFor(Station station, String lineId, String direction) {
+        if (station.platforms() == null) return null;
+        return station.platforms().stream()
+                .filter(platform -> platform.line().equals(lineId))
+                .filter(platform -> platform.towards().stream().anyMatch(direction::equalsIgnoreCase))
+                .map(PlatformInfo::code)
+                .findFirst()
+                .orElse(null);
     }
 
     private Fare resolveFare(String from, String to, int duration, Map<String, Integer> fares) {

@@ -9,4 +9,5 @@ public record Station(
         double latitude,
         double longitude,
         boolean accessible,
-        String status) {}
+        String status,
+        List<PlatformInfo> platforms) {}

@@ -7,6 +7,7 @@ public record RouteSegment(
         String lineName,
         String color,
         String direction,
+        String platformCode,
         Station from,
         Station to,
         List<Station> stops,
