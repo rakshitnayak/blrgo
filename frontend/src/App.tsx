@@ -151,9 +151,9 @@ export default function App() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Namma Go home">
+        <a className="brand" href="#top" aria-label="BLRGo home">
           <span className="brand-mark"><TrainIcon /></span>
-          <span><strong>Namma Go</strong><small>Bengaluru Metro</small></span>
+          <span><strong>BLRGo</strong><small>Move Bengaluru</small></span>
         </a>
         <div className="network-status"><i /> <span>{network.meta.stationCount} stations</span><b>·</b><span>{network.lines.length} lines</span></div>
         <nav><a href="#network">Network map</a><a href="#journey">Journey</a><span className="data-pill">Updated Nov 2026</span></nav>
@@ -161,7 +161,7 @@ export default function App() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="kicker"><span /> Bengaluru metro, simplified</p>
+          <p className="kicker"><span /> Bengaluru, moving better</p>
           <h1>Move through Bengaluru.<br/><em>Start from where you are.</em></h1>
           <p>Find your nearest station or plan a trip across the live Namma Metro network.</p>
         </div>
@@ -279,7 +279,7 @@ export default function App() {
         <div className="line-cards">{network.lines.map((line) => <article key={line.id}><i style={{ background: line.color }}/><span><strong>{line.name}</strong><small>{line.stationIds.length} stations</small></span><b>{stationMap.get(line.stationIds[0])?.name}<ArrowIcon />{stationMap.get(line.stationIds.at(-1) ?? "")?.name}</b></article>)}</div>
       </section>
 
-      <footer><div className="brand"><span className="brand-mark"><TrainIcon /></span><span><strong>Namma Go</strong><small>Made for Bengaluru</small></span></div><p>Unofficial journey planner using BMRCL timetable-derived GTFS and OpenStreetMap data. Always verify live fares and service updates with BMRCL.</p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a></footer>
+      <footer><div className="brand"><span className="brand-mark"><TrainIcon /></span><span><strong>BLRGo</strong><small>Made for Bengaluru</small></span></div><p>Unofficial journey planner using BMRCL timetable-derived GTFS and OpenStreetMap data. Always verify live fares and service updates with BMRCL.</p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a></footer>
     </main>
   );
 }

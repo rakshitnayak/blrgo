@@ -1,7 +1,8 @@
-# Namma Metro Journey Planner
+# BLRGo
 
-A full-stack Bengaluru Metro journey planner built with Java, Spring Boot,
-React, and TypeScript.
+A Bengaluru mobility planner built with Java, Spring Boot, React, and
+TypeScript. BLRGo currently focuses on Namma Metro and is designed to grow into
+a broader city-transport experience.
 
 ## Current milestone
 
