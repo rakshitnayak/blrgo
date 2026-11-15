@@ -34,7 +34,7 @@ function stateKey(state: RouteState) {
 function directionFor(line: MetroLine, from: string, to: string, stations: Map<string, Station>) {
   const fromIndex = line.stationIds.indexOf(from);
   const toIndex = line.stationIds.indexOf(to);
-  const terminalId = toIndex >= fromIndex ? line.stationIds.at(-1)! : line.stationIds[0];
+  const terminalId = toIndex >= fromIndex ? line.stationIds[line.stationIds.length - 1] : line.stationIds[0];
   return stations.get(terminalId)!.name;
 }
 
@@ -113,7 +113,7 @@ export function findRoute(from: string, to: string) {
     }
     const line = lines.get(lineId)!;
     const first = segmentStops[0];
-    const last = segmentStops.at(-1)!;
+    const last = segmentStops[segmentStops.length - 1];
     const direction = directionFor(line, first.id, last.id, stations);
     segments.push({
       line: lineId,
