@@ -48,6 +48,19 @@ npm run dev
 
 Open <http://localhost:5173>. Vite proxies `/api` to Spring Boot on port 8080.
 
+## Deploy to Vercel
+
+The repository includes lightweight Vercel Functions for `/api/network` and
+`/api/routes`. This keeps the full app deployable on Vercel while preserving
+the Spring Boot implementation for local development and learning.
+
+```sh
+npx vercel --prod
+```
+
+Vercel uses `vercel.json` to build the Vite frontend and bundles the shared
+metro data with the serverless API functions.
+
 ## API
 
 ```http
