@@ -276,7 +276,32 @@ export default function App() {
 
       <section className="line-directory">
         <div><p className="section-label">The whole network</p><h2>Four lines. One Bengaluru.</h2><p>Every currently operational station is available in search and on the map, including the newly opened Pink Line section.</p></div>
-        <div className="line-cards">{network.lines.map((line) => <article key={line.id}><i style={{ background: line.color }}/><span><strong>{line.name}</strong><small>{line.stationIds.length} stations</small></span><b>{stationMap.get(line.stationIds[0])?.name}<ArrowIcon />{stationMap.get(line.stationIds.at(-1) ?? "")?.name}</b></article>)}</div>
+        <div className="line-cards">{network.lines.map((line) => <article key={line.id}><i style={{ background: line.color }}/><span><strong>{line.name} route</strong><small>{line.stationIds.length} Namma Metro stations</small></span><b>{stationMap.get(line.stationIds[0])?.name}<ArrowIcon />{stationMap.get(line.stationIds.at(-1) ?? "")?.name}</b></article>)}</div>
+      </section>
+
+      <section className="metro-guide" aria-labelledby="metro-guide-title">
+        <div className="metro-guide__intro">
+          <p className="section-label">Bengaluru metro guide</p>
+          <h2 id="metro-guide-title">Everything you need to plan a Namma Metro journey</h2>
+          <p>BLRGo is a Bengaluru Metro route planner for checking the network map, station sequence, line changes, estimated fare and travel time before you leave.</p>
+        </div>
+        <div className="metro-guide__cards">
+          <article>
+            <span>01</span>
+            <h3>Bengaluru Metro map and stations</h3>
+            <p>Explore every operational Namma Metro station and see how the Purple, Green, Yellow and Pink lines connect across Bengaluru.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Purple, Green, Yellow and Pink Line routes</h3>
+            <p>Plan a journey on one line or find the best interchange when your route moves between different metro lines.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Metro fare, travel time and nearest station</h3>
+            <p>Compare estimated token fares and stop counts, then use your location to find the Bengaluru Metro station nearest to you.</p>
+          </article>
+        </div>
       </section>
 
       <footer><div className="brand"><span className="brand-mark"><TrainIcon /></span><span><strong>BLRGo</strong><small>Made for Bengaluru</small></span></div><p>Unofficial journey planner using BMRCL timetable-derived GTFS and OpenStreetMap data. Always verify live fares and service updates with BMRCL.</p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a></footer>

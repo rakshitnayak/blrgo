@@ -1,0 +1,17 @@
+{
+  "name": "BLRGo — Bengaluru Metro Journey Planner",
+  "short_name": "BLRGo",
+  "description": "Plan Namma Metro routes, stations, interchanges, estimated fares, travel time, and nearby stations in Bengaluru.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f3ef",
+  "theme_color": "#26322c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
