@@ -196,6 +196,8 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
   const mapRef = useRef<MapLibreMap | null>(null);
   const [showNames, setShowNames] = useState(false);
   const [stationView, setStationView] = useState<StationView>("all");
+  const [mapUnavailable, setMapUnavailable] = useState(false);
+  const [mapAttempt, setMapAttempt] = useState(0);
 
   useEffect(() => {
     setStationView(route ? "journey" : "all");
@@ -203,29 +205,56 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
 
   useEffect(() => {
     if (!container.current || mapRef.current) return;
-    const map = new maplibregl.Map({
-      container: container.current,
-      center: [77.5946, 12.9716],
-      zoom: 10.35,
-      minZoom: 9,
-      maxZoom: 17,
-      attributionControl: {},
-      style: {
-        version: 8,
-        glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
-        sources: {
-          osm: {
-            type: "raster",
-            tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-            tileSize: 256,
-            attribution: "© OpenStreetMap contributors",
+    let map: MapLibreMap;
+    let removed = false;
+    setMapUnavailable(false);
+
+    try {
+      map = new maplibregl.Map({
+        container: container.current,
+        center: [77.5946, 12.9716],
+        zoom: 10.35,
+        minZoom: 9,
+        maxZoom: 17,
+        attributionControl: {},
+        style: {
+          version: 8,
+          glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
+          sources: {
+            osm: {
+              type: "raster",
+              tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+              tileSize: 256,
+              attribution: "© OpenStreetMap contributors",
+            },
           },
+          layers: [{ id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -0.88, "raster-opacity": 0.7 } }],
         },
-        layers: [{ id: "osm", type: "raster", source: "osm", paint: { "raster-saturation": -0.88, "raster-opacity": 0.7 } }],
-      },
-    });
+      });
+    } catch (error) {
+      if (error instanceof maplibregl.GPUInitializationError) {
+        container.current.replaceChildren();
+        setMapUnavailable(true);
+        return;
+      }
+      throw error;
+    }
+
     mapRef.current = map;
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+
+    map.on("error", (event) => {
+      if (event.error instanceof maplibregl.GPUInitializationError) {
+        setMapUnavailable(true);
+        if (!removed) {
+          removed = true;
+          map.remove();
+          mapRef.current = null;
+        }
+        return;
+      }
+      console.error(event.error);
+    });
 
     map.on("load", () => {
       map.addImage("junction-icon", junctionIcon(), { pixelRatio: 2 });
@@ -324,8 +353,11 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
       });
     });
 
-    return () => { map.remove(); mapRef.current = null; };
-  }, [network]);
+    return () => {
+      if (!removed) map.remove();
+      mapRef.current = null;
+    };
+  }, [mapAttempt, network]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -367,16 +399,31 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
   return (
     <div className="metro-map-shell">
       <div className="metro-map" ref={container} aria-label="Interactive map showing all operational Namma Metro stations" />
-      <div className="map-toolbar" aria-label="Map display controls">
-        <div className="map-view-toggle" aria-label="Station view">
-          <button className={stationView === "all" ? "active" : ""} type="button" onClick={() => setStationView("all")}>Network</button>
-          <button className={stationView === "journey" ? "active" : ""} type="button" disabled={!route} onClick={() => setStationView("journey")}>My route</button>
+      {mapUnavailable ? (
+        <div className="map-fallback" role="status">
+          <div className="map-fallback__graphic" aria-hidden="true">
+            <span /><span /><span />
+          </div>
+          <p className="section-label">Interactive map unavailable</p>
+          <h3>Your journey planner still works</h3>
+          <p>This browser or device could not start the map. You can still choose stations, find the nearest stop and view complete route details.</p>
+          <small>Updating your browser or enabling hardware acceleration may restore the map.</small>
+          <button type="button" onClick={() => setMapAttempt((attempt) => attempt + 1)}>Try map again</button>
         </div>
-        <button className={`name-toggle ${showNames ? "active" : ""}`} type="button" role="switch" aria-label="Show station names" aria-checked={showNames} onClick={() => setShowNames((visible) => !visible)}>
-          <span>Station names</span><i />
-        </button>
-      </div>
-      <div className="map-key"><span className="map-key__junction">●</span><b>Junction</b><span className="map-key__station">●</span><b>Station</b></div>
+      ) : (
+        <>
+          <div className="map-toolbar" aria-label="Map display controls">
+            <div className="map-view-toggle" aria-label="Station view">
+              <button className={stationView === "all" ? "active" : ""} type="button" onClick={() => setStationView("all")}>Network</button>
+              <button className={stationView === "journey" ? "active" : ""} type="button" disabled={!route} onClick={() => setStationView("journey")}>My route</button>
+            </div>
+            <button className={`name-toggle ${showNames ? "active" : ""}`} type="button" role="switch" aria-label="Show station names" aria-checked={showNames} onClick={() => setShowNames((visible) => !visible)}>
+              <span>Station names</span><i />
+            </button>
+          </div>
+          <div className="map-key"><span className="map-key__junction">●</span><b>Junction</b><span className="map-key__station">●</span><b>Station</b></div>
+        </>
+      )}
     </div>
   );
 }
