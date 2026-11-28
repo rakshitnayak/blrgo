@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "Namma Metro",
-    "generatedAt": "2026-11-14",
-    "dataVersion": "GTFS 2026-08-17 + Pink Line opening 2026-11-14",
+    "generatedAt": "2026-11-28",
+    "dataVersion": "GTFS 2026-08-17 + Pink Line service verified 2026-11-28",
     "stationCount": 88,
     "disclaimer": "Unofficial journey-planning data. Confirm fares and service changes with BMRCL.",
     "platformData": "Community GTFS platform assignments; always follow live station displays."
