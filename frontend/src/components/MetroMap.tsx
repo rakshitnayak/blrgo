@@ -3,6 +3,7 @@ import * as maplibregl from "maplibre-gl";
 import type { GeoJSONSource, Map as MapLibreMap, MapLayerMouseEvent } from "maplibre-gl";
 import mapLibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import type { FeatureCollection, LineString, Point } from "geojson";
+import { futureNetwork, type FutureLineProperties } from "../data/futureNetwork";
 import type { Network, PlatformInfo, Route, Station, UserLocation } from "../types";
 import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -191,10 +192,27 @@ function stationPopup(station: Station, network: Network): HTMLElement {
   return content;
 }
 
+function futureLinePopup(line: FutureLineProperties): HTMLElement {
+  const content = document.createElement("div");
+  content.className = "future-popup";
+
+  const eyebrow = document.createElement("span");
+  eyebrow.textContent = "Future corridor · not operational";
+  const title = document.createElement("strong");
+  title.textContent = line.name;
+  const route = document.createElement("p");
+  route.textContent = line.route;
+  const status = document.createElement("small");
+  status.textContent = line.status;
+  content.append(eyebrow, title, route, status);
+  return content;
+}
+
 export function MetroMap({ network, route, userLocation, nearestStation }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [showNames, setShowNames] = useState(false);
+  const [showFutureLines, setShowFutureLines] = useState(true);
   const [stationView, setStationView] = useState<StationView>("all");
   const [mapUnavailable, setMapUnavailable] = useState(false);
   const [mapAttempt, setMapAttempt] = useState(0);
@@ -258,6 +276,10 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
 
     map.on("load", () => {
       map.addImage("junction-icon", junctionIcon(), { pixelRatio: 2 });
+      map.addSource("future-lines", { type: "geojson", data: futureNetwork });
+      map.addLayer({ id: "future-lines-casing", type: "line", source: "future-lines", paint: { "line-color": "#fffdf8", "line-width": 7, "line-opacity": 0.84 } });
+      map.addLayer({ id: "future-lines", type: "line", source: "future-lines", paint: { "line-color": ["get", "color"], "line-width": 3.4, "line-dasharray": [2, 2], "line-opacity": 0.72 } });
+      map.addLayer({ id: "future-lines-hit", type: "line", source: "future-lines", paint: { "line-color": "#000000", "line-width": 18, "line-opacity": 0.01 } });
       map.addSource("metro-lines", { type: "geojson", data: lineFeatures(network) });
       map.addLayer({ id: "metro-casing", type: "line", source: "metro-lines", paint: { "line-color": "#ffffff", "line-width": 8, "line-opacity": 0.92 } });
       map.addLayer({ id: "metro-lines", type: "line", source: "metro-lines", paint: { "line-color": ["get", "color"], "line-width": 4.5, "line-opacity": 0.88 } });
@@ -341,6 +363,16 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
       });
       map.on("mouseenter", "station-shells", () => { map.getCanvas().style.cursor = "pointer"; });
       map.on("mouseleave", "station-shells", () => { map.getCanvas().style.cursor = ""; });
+      map.on("mouseenter", "future-lines-hit", () => { map.getCanvas().style.cursor = "pointer"; });
+      map.on("mouseleave", "future-lines-hit", () => { map.getCanvas().style.cursor = ""; });
+      map.on("click", "future-lines-hit", (event: MapLayerMouseEvent) => {
+        const properties = event.features?.[0]?.properties as FutureLineProperties | undefined;
+        if (!properties) return;
+        new maplibregl.Popup({ offset: 10, closeButton: true, maxWidth: "310px" })
+          .setLngLat(event.lngLat)
+          .setDOMContent(futureLinePopup(properties))
+          .addTo(map);
+      });
       map.on("click", "station-shells", (event: MapLayerMouseEvent) => {
         const feature = event.features?.[0];
         if (!feature || feature.geometry.type !== "Point") return;
@@ -377,28 +409,45 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
       } else if (userLocation && nearestStation) {
         bounds.extend([userLocation.longitude, userLocation.latitude]);
         bounds.extend([nearestStation.longitude, nearestStation.latitude]);
+      } else if (showFutureLines) {
+        network.stations.forEach((station) => bounds.extend([station.longitude, station.latitude]));
+        futureNetwork.features.forEach((line) => line.geometry.coordinates.forEach((coordinate) => bounds.extend(coordinate as [number, number])));
       } else {
         network.stations.forEach((station) => bounds.extend([station.longitude, station.latitude]));
       }
       map.fitBounds(bounds, {
         padding: { top: 110, right: 80, bottom: 100, left: 80 },
-        maxZoom: stationView === "journey" ? 13 : userLocation && nearestStation ? 14 : 10.5,
+        maxZoom: stationView === "journey" ? 13 : userLocation && nearestStation ? 14 : showFutureLines ? 9.65 : 10.5,
         duration: 900,
       });
     };
     if (map.loaded()) update(); else map.once("load", update);
-  }, [network, nearestStation, route, stationView, userLocation]);
+  }, [network, nearestStation, route, showFutureLines, stationView, userLocation]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
     const updateVisibility = () => map.setLayoutProperty("station-labels", "visibility", showNames ? "visible" : "none");
-    if (map.loaded()) updateVisibility(); else map.once("load", updateVisibility);
+    if (map.getLayer("station-labels")) updateVisibility(); else map.once("load", updateVisibility);
   }, [showNames]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const updateVisibility = () => {
+      const visibility = showFutureLines && stationView === "all" ? "visible" : "none";
+      const futureSource = map.getSource("future-lines") as GeoJSONSource | undefined;
+      futureSource?.setData(visibility === "visible" ? futureNetwork : { type: "FeatureCollection", features: [] });
+      if (map.getLayer("future-lines-casing")) map.setLayoutProperty("future-lines-casing", "visibility", visibility);
+      if (map.getLayer("future-lines")) map.setLayoutProperty("future-lines", "visibility", visibility);
+      if (map.getLayer("future-lines-hit")) map.setLayoutProperty("future-lines-hit", "visibility", visibility);
+    };
+    if (map.getSource("future-lines")) updateVisibility(); else map.once("load", updateVisibility);
+  }, [showFutureLines, stationView]);
 
   return (
     <div className="metro-map-shell">
-      <div className="metro-map" ref={container} aria-label="Interactive map showing all operational Namma Metro stations" />
+      <div className="metro-map" ref={container} aria-label="Interactive map showing operational and future Namma Metro lines" />
       {mapUnavailable ? (
         <div className="map-fallback" role="status">
           <div className="map-fallback__graphic" aria-hidden="true">
@@ -420,8 +469,11 @@ export function MetroMap({ network, route, userLocation, nearestStation }: Props
             <button className={`name-toggle ${showNames ? "active" : ""}`} type="button" role="switch" aria-label="Show station names" aria-checked={showNames} onClick={() => setShowNames((visible) => !visible)}>
               <span>Station names</span><i />
             </button>
+            <button className={`name-toggle future-toggle ${showFutureLines ? "active" : ""}`} type="button" role="switch" aria-label="Show future metro lines" aria-checked={showFutureLines} onClick={() => setShowFutureLines((visible) => !visible)}>
+              <span>Future lines</span><i />
+            </button>
           </div>
-          <div className="map-key"><span className="map-key__junction">●</span><b>Junction</b><span className="map-key__station">●</span><b>Station</b></div>
+          <div className="map-key"><span className="map-key__junction">●</span><b>Junction</b><span className="map-key__station">●</span><b>Station</b>{showFutureLines && stationView === "all" && <><span className="map-key__future"/><b>Future</b></>}</div>
         </>
       )}
     </div>

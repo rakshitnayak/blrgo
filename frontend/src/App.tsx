@@ -156,7 +156,7 @@ export default function App() {
           <span><strong>BLRGo</strong><small>Move Bengaluru</small></span>
         </a>
         <div className="network-status"><i /> <span>{network.meta.stationCount} stations</span><b>·</b><span>{network.lines.length} lines</span></div>
-        <nav><a href="#network">Network map</a><a href="#journey">Journey</a><a href="/upcoming">Upcoming lines</a><span className="data-pill">Verified 28 Nov 2026</span></nav>
+        <nav><a href="#network">Network map</a><a href="#journey">Journey</a><span className="data-pill">Verified 28 Nov 2026</span></nav>
       </header>
 
       <section className="hero" id="top">
@@ -198,12 +198,6 @@ export default function App() {
         </div>
       </section>
 
-      <section className="pink-network-update" aria-label="Pink Line service update">
-        <div className="pink-network-update__route" aria-hidden="true"><i/><i/><i/><i/><i/><i/></div>
-        <div><small>Now open · 14 November 2026</small><strong>Pink Line: Kalena Agrahara to S.G. Palya</strong><p>All six operational stations are available in journey planning, nearest-station results and the live map.</p></div>
-        <a href="/upcoming">See upcoming lines</a>
-      </section>
-
       {(nearestStation || locationError) && (
         <section className={`location-result ${locationError ? "has-error" : ""}`} aria-live="polite">
           <span className="location-result__icon"><LocationIcon /></span>
@@ -229,7 +223,7 @@ export default function App() {
         <div className={`travel-workspace ${route ? "has-route" : ""}`}>
           <div className="map-card">
             <MetroMap network={network} route={route} userLocation={userLocation} nearestStation={nearestStation} />
-            <div className="map-note"><span>◎</span><div><strong>Explore every station</strong><small>Turn on station names when you need them. Select a station for lines, platforms, directions, and accessibility.</small></div></div>
+            <div className="map-note"><span>◎</span><div><strong>Live and future network</strong><small>Dashed routes are indicative, not live service. Select a station or future line for details.</small></div></div>
           </div>
 
           <aside className="journey-panel" id="journey">
@@ -281,7 +275,7 @@ export default function App() {
       </section>
 
       <section className="line-directory">
-        <div><p className="section-label">The whole network</p><h2>Four lines. One Bengaluru.</h2><p>Every currently operational station is available in search and on the map, including the newly opened Pink Line section.</p></div>
+        <div><p className="section-label">The whole network</p><h2>Four lines. One Bengaluru.</h2><p>Every currently operational station is available in search and on the map.</p></div>
         <div className="line-cards">{network.lines.map((line) => <article key={line.id}><i style={{ background: line.color }}/><span><strong>{line.name} route</strong><small>{line.stationIds.length} Namma Metro stations</small></span><b>{stationMap.get(line.stationIds[0])?.name}<ArrowIcon />{stationMap.get(line.stationIds.at(-1) ?? "")?.name}</b></article>)}</div>
       </section>
 
@@ -310,7 +304,7 @@ export default function App() {
         </div>
       </section>
 
-      <footer><div className="brand"><span className="brand-mark"><TrainIcon /></span><span><strong>BLRGo</strong><small>Made for Bengaluru</small></span></div><p>Unofficial journey planner using BMRCL timetable-derived GTFS and OpenStreetMap data. Always verify live fares and service updates with BMRCL.</p><div className="footer-links"><a href="/upcoming">Upcoming lines</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a></div></footer>
+      <footer><div className="brand"><span className="brand-mark"><TrainIcon /></span><span><strong>BLRGo</strong><small>Made for Bengaluru</small></span></div><p>Unofficial journey planner using BMRCL timetable-derived GTFS and OpenStreetMap data. Always verify live fares and service updates with BMRCL.</p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap</a></footer>
     </main>
   );
 }
